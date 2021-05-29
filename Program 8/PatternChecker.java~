@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class PatternChecker {
+  Scanner keys = new Scanner(System.in);
+  public static void main(String[] args){
+    largeSmall();
+  }
+  public static void largeSmall() {
+    int num, count, large = Integer.MIN_VALUE, largest = Integer.MIN_VALUE, small = Integer.MAX_VALUE, smallest = Integer.MAX_VALUE, i = 0, ;
+
+    System.out.print("Enter the limit: ");
+    count = keys.nextInt();
+
+    System.out.printf("%nEnter %d numbers: ", count);
+
+    while(i < count) {
+      num = keys.nextInt();
+      if(num > largest) largest = num;
+      if(num > large && num < largest) large = num;
+      if(num < smallest) smallest = num;
+      if(num < small && num > smallest) small = num;
+    }
+
+    System.out.printf("*** Largest and Smallest Pairs: (%d, %d), (%d, %d)",largest,large,smallest,small);
+
+  }
+}

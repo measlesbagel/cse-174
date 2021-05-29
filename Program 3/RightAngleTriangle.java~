@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class RightAngleTriangle {
+
+  public static void main(String[] args) {
+    double ax,ay,bx,by,cx,cy;
+    String name;
+    Scanner keys = new Scanner(System.in);
+
+    System.out.print("Enter three letter name of the triangle: ");
+    name = keys.nextLine();
+
+    System.out.printf("\n Enter the coordinate of %s%n: ", name.charAt(1));
+    ax,ay = keys.nextDouble();
+    System.out.printf("\n Enter the coordinate of %s%n: ", name.charAt(2));
+    bx,by = keys.nextDouble();
+
+    System.out.printf("##### Right Triangle Calculation for the %s Triangle #####%n ", name);
+
+
+
+  }
+}

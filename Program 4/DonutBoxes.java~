@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class DonutBoxes {
+  public static void main(String[] args) {
+    Scanner keys = new Scanner(System.in);
+    int donuts, boxes;
+
+    System.out.print("How many donuts? ");
+    donuts = keys.nextInt();
+    boxes = (donuts%12 == 0) ? donuts/12 : donuts/12 + 1;
+
+    System.out.printf("You will need %d box(es) for the donuts",boxes);
+
+    keys.close();
+  }
+}

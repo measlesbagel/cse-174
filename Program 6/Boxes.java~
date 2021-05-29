@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Boxes {
+  public static void main(String[] args) {
+    draw('G');
+  }
+
+  public static void draw(char a) {
+    System.out.printf("%c%c%c%c%c%n",a,a,a,a,a);
+    System.out.printf("%c   %c%n",a,a)
+    System.out.printf("%c   %c%n",a,a)
+    System.out.printf("%c   %c%n",a,a)
+    System.out.printf("%c   %%nc",a,a)
+    System.out.printf("%c%c%c%c%c%n",a,a,a,a,a);
+
+  }
+}

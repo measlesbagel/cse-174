@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Cylinder {
+  public static void main(String[] args) {
+    Scanner keys = new Scanner(System.in);
+    char decision;
+    double radius,height;
+
+    System.out.println("-- Menu --");
+    System.out.println("a) Area of a circle");
+    System.out.println("b) Area of the surface of a cyclinder");
+    System.out.println("c) Volume of a cylinder");
+    System.out.print("Enter your choice: ");
+    decision = keys.next();
+
+    switch (decision) {
+      case 'a':
+        System.out.print("Enter the radius: ");
+        radius = keys.nextDouble();
+        System.out.printf("%nThe area of the circle is %.3f",circArea(radius));
+      case 'b':
+        System.out.print("Enter the radius: ");
+        radius = keys.nextDouble();
+        System.out.print("\nEnter the height: ");
+        height = keys.nextDouble();
+        System.out.printf("%nThe area of the surface of a cylinder is %.3f",cylArea(radius,height));
+      case 'c':
+        System.out.print("Enter the radius: ");
+        radius = keys.nextDouble();
+        System.out.print("\nEnter the height: ");
+        height = keys.nextDouble();
+        System.out.printf("%nThe volume of the cylinder is %.3f",cylVolume(radius,height));
+      default:
+        System.out.println("The selection is not correct. Program terminated.");
+        
+    }
+    keys.close();
+  }
+
+  public static double circArea(double radius) {
+    double area = Math.PI*Math.pow(radius,2);
+    return area;
+  }
+
+  public static double cylArea(double radius, double height) {
+    double surface = 2*circArea(radius)+(Math.PI*(2*radius)*height);
+    return surface;
+  }
+
+  public static double cylVolume(double radius, double height) {
+    double volume = circArea(radius)*height;
+    return volume;
+  }
+}

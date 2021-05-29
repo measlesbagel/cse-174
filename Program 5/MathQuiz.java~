@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class MathQuiz {
+  public static void main(String[] args) {
+    int x,y,answer,solution,score,multiplier;
+    String difficulty;
+    Scanner keys = new Scanner(System.in);
+
+    System.out.println("Welcome to my math quiz!");
+    System.out.println("This quiz will give you four multiplication problems,");
+    System.out.println("followed by four division problems.");
+    System.out.println("An easy quiz will include numbers up to 100.");
+    System.out.println("A hard quiz will include numbers up to 1000.");
+    System.out.println("-----------------------------------------------------");
+    System.out.println("Do you want an easy quiz or a hard quiz?");
+
+    System.out.print("Enter the word hard or easy:");
+    difficulty = keys.next();
+
+    System.out.println("-MULTIPLICATION--------------------------------------");
+    System.out.printf("You have chosen %s",difficulty);
+
+    multiplier = (difficulty.equalsIgnoreCase("easy")) ? 10 : 31;
+
+    for(int i = 0; i <= 4; i++) {
+      x = 1 + Math.random()*multiplier;
+      y = 1 + Math.random()*multiplier;
+      solution = x*y;
+      System.out.printf("%d x %d = ",x,y);
+      answer = keys.nextInt();
+      if(answer == solution) {
+        score++
+        System.out.printf("Correct! %d answers correct so far",score)
+      } else {
+        System.out.printf("Sorry, %d x %d = %d. %d answers correct so far",x,y,solution,score)
+      }
+    }
+
+    System.out.println("-DIVISION--------------------------------------------");
+    for(int i = 0; i <= 4; i++) {
+      x = 1 + Math.random()*multiplier;
+      y = 1 + Math.random()*multiplier;
+      solution = (x*y)/x;
+      System.out.printf("%d / %d = ",x*y,x);
+      answer = keys.nextInt();
+      if(answer == solution) {
+        score++
+        System.out.printf("Correct! %d answers correct so far",score)
+      } else {
+        System.out.printf("Sorry, %d / %d = %d. %d answers correct so far",x*y,x,solution,score)
+      }
+    }
+
+  }
+}

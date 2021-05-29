@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class EarthTemp {
+  public static void main(String[] args) {
+    Scanner keys = new Scanner(System.in);
+    double depth;
+
+    System.out.print("Enter the depth in kilometers: ");
+    depth = keys.nextDouble();
+
+    System.out.printf("%nThe celsius temperature at depth %.2f is %.2f",depth,getCelsiusAtDepth(depth));
+    System.out.printf("%nThe fahrenheit temperature at depth %.2f is %.2f",depth,convertCelsiusToFahrenheit(getCelsiusAtDepth(depth)));
+
+    keys.close();
+  }
+
+  public static double getCelsiusAtDepth(double km) {
+    double celsius = 10*km+20;
+    return celsius;
+  }
+
+  public static double convertCelsiusToFahrenheit(double temp) {
+    double fahrenheit = 1.8*temp+32;
+    return fahrenheit;
+  }
+}

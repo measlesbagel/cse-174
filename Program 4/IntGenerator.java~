@@ -1,0 +1,10 @@
+public class IntGenerator {
+  public static void main(String[] args) {
+    int randInt = 50 + (int) (Math.random()*51);
+    String decision;
+
+    decision = (randInt%2 == 0) ? "Even" : "Odd";
+
+    System.out.printf("The generated number is %d and it is %S!",randInt,decision);
+  }
+}

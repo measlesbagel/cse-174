@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class SwapLetters {
+  public static void main(String[] args) {
+    int i,j;
+    String word, newWord;
+    Scanner keys = new Scanner(System.in);
+
+    System.out.print("Enter a word: ");
+    word = keys.nextLine();
+    System.out.printf("%nEnter two values for i and j between (0-%d)",(word.length()-1));
+    i = keys.nextInt();
+    j = keys.nextInt();
+
+    newWord = word.substring(0,i)+word.substring(j,j+1)+word.substring(i+1,j)+
+      word.substring(i,i+1)+word.substring(j+1);
+
+    System.out.printf("** %s **",newWord);
+
+    keys.close();
+  }
+}
